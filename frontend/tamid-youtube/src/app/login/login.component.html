@@ -1,0 +1,32 @@
+<div fxLayout="row" fxLayoutAlign="center end">
+  <mat-card fxFlex="20" fxFlex.lt-lg="60" fxFlex.lt-md="100">
+    <mat-card-title>
+      {{formType ? 'Sign In' : 'Register'}}
+    </mat-card-title>
+    <mat-card-content>
+      <form fxLayout="column" #loginForm="ngForm" (ngSubmit)="submit()" fxLayoutGap="10px">
+        <mat-form-field appearance="outline">
+          <mat-icon matPrefix>alternate_email</mat-icon>
+          <mat-label>Email Address</mat-label>
+          <input matInput type="text" [(ngModel)]="username" name="username" required email/>
+        </mat-form-field>
+        <mat-form-field appearance="outline" *ngIf="!formType">
+          <mat-icon matPrefix>person</mat-icon>
+          <mat-label>Name</mat-label>
+          <input matInput type="text" [(ngModel)]="name" name="name" required/>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput [type]="showPassword()" [(ngModel)]="password" name="password" required/>
+          <button mat-icon-button matSuffix (click)="showPw = !showPw" type="button">
+            <mat-icon>{{showPw ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <button mat-button type="button" (click)="formType = !formType">
+          {{formType ? 'Register?' : 'Already have an account?'}}
+        </button>
+        <button mat-flat-button color="primary" type="submit" [disabled]="buttonDisabled()">{{formType ? 'Sign In' : 'Register'}}</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

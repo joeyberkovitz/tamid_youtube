@@ -1,0 +1,30 @@
+.container{
+  margin: 10px;
+  height: 85vh;
+}
+.searchResults{
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.itemImage{
+  object-fit: cover;
+  width: 120px !important;
+  height: 90px !important;
+  border-radius: 10% !important;
+}
+.itemTitle{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+  font-weight: normal;
+  width: calc(100% - 120px);
+}
+
+.mat-list-base .mat-list-item.mat-2-line, .mat-list-base .mat-list-option.mat-2-line{
+  height: 95px;
+}
+.title{
+  text-align: center;
+  width: 100%;
+}
