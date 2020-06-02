@@ -11,6 +11,7 @@
         "php": "^7.2.5",
         "alaouy/youtube": "^2.2",
         "baopham/dynamodb": "^6.0",
+        "bref/bref": "^0.5.25",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",

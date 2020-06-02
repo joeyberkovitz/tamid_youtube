@@ -18,7 +18,7 @@ class OptionalAuth extends Authenticate
     {
         try {
             $this->authenticate($request, $guards);
-        } catch (AuthenticationException $e){}
+        } catch (\Exception $e){}
 
         return $next($request);
     }

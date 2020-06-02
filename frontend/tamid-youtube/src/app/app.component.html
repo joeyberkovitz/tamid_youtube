@@ -3,7 +3,7 @@
     <div fxLayout="column" fxFlex>
       <div fxLayout="row">
         <button mat-button (click)="sidenav.close()"><mat-icon>menu</mat-icon></button>
-        <button mat-button routerLink="/" fxFlex="200px"><img src="assets/logo.png" width="70px"/>Tamid YouTube</button>
+        <button mat-button routerLink="/" fxFlex="200px"><img src="assets/logo.png" width="70px"/>TamidTube</button>
       </div>
       <button mat-button routerLink="/login" fxFlex="80px" *ngIf="!loggedIn()">Log In</button>
       <button mat-button (click)="logout()" fxFlex="80px" *ngIf="loggedIn()">Logout</button>
@@ -13,7 +13,7 @@
 <mat-toolbar>
   <span fxFlex fxLayoutGap="50px" class="large-toolbar">
     <button mat-button fxHide fxShow.lt-sm (click)="sidenav.open()"><mat-icon>menu</mat-icon></button>
-    <button fxHide.lt-sm mat-button routerLink="/" fxFlex="200px"><img src="assets/logo.png" width="70px"/>Tamid YouTube</button>
+    <button fxHide.lt-sm mat-button routerLink="/" fxFlex="200px"><img src="assets/logo.png" width="70px"/>TamidTube</button>
     <form (ngSubmit)="search()" fxFlex>
       <mat-form-field appearance="standard" class="mat-search" [ngClass.lt-sm]="'mat-search-sm'" fxFlex floatLabel="never">
         <input matInput placeholder="Search" type="text" [(ngModel)]="query" name="query" [matAutocomplete]="auto">
