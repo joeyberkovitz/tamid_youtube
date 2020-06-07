@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
 
-
+// All routes except login redirect to search
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'search/:query', component: HomeComponent},

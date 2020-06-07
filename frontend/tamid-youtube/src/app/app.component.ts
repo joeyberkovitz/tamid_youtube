@@ -1,3 +1,5 @@
+// Main app component, hosts nav bar and router outlet for other pages
+
 import {Component, ViewChild} from '@angular/core';
 import {UserService} from './user/user.service';
 import {Router} from '@angular/router';
@@ -16,8 +18,10 @@ export class AppComponent {
   @ViewChild(MatAutocompleteTrigger) auto: MatAutocompleteTrigger;
 
   constructor(private userService: UserService, private router: Router, private searchService: SearchService) {
+    // Refresh search history at startup, will only work if user is logged in
     this.getSearchHistory();
 
+    // On login complete and search complete, refresh the search history
     userService.loginCompleteEmitter$.subscribe(data => {
       this.getSearchHistory();
     });
@@ -41,6 +45,7 @@ export class AppComponent {
   }
 
   getSearchHistory(): void{
+    // Only makes sense to get search history if logged in
     if (!this.userService.isAuthed()) return;
     this.searchService.searchHistory().subscribe(
       data => {

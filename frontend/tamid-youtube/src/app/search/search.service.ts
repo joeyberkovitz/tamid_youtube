@@ -2,8 +2,9 @@ import {EventEmitter, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {environment} from '../../environments/environment';
-import {map} from "rxjs/operators";
+import {map} from 'rxjs/operators';
 
+// Interfaces define return datatype according to Laravel YouTube API module
 export interface SearchItem{
   kind: string;
   etag: string;
@@ -52,6 +53,7 @@ export class SearchService {
   public searchCompleteEmitter$: EventEmitter<any>;
 
   constructor(private http: HttpClient) {
+    // Emitter sends out an event whenever a search is completed
     this.searchCompleteEmitter$ = new EventEmitter<any>();
   }
 

@@ -2,6 +2,7 @@
 namespace App;
 use Illuminate\Support\Str;
 
+// Trait which when applied to a model auto generates a UUID instead of an auto-incrementing ID
 trait UsesUuid
 {
     protected static function bootUsesUuid()

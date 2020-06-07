@@ -20,11 +20,13 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // Youtube API requires a script be added dynamically
     const tag = document.createElement('script');
 
     tag.src = 'https://www.youtube.com/iframe_api';
     document.body.appendChild(tag);
 
+    // Get search query from URL whenever it changes
     this.route.paramMap.subscribe(params => {
       this.query = params.get('query');
       this.search();

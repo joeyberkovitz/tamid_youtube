@@ -1,5 +1,5 @@
 <?php
-
+// Class copied from Passport OAuth server, modified to extend DynamoDbModel to support DynamoDb
 namespace App;
 
 use BaoPham\DynamoDb\DynamoDbModel;

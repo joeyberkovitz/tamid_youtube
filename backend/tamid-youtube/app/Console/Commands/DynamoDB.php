@@ -1,5 +1,6 @@
 <?php
 ## app/Console/Commands/DynamoDB.php
+// Not used, could be used as a CLI for DynamoDB
 namespace App\Console\Commands;
 
 use Illuminate\Support\Facades\App;

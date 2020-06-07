@@ -63,8 +63,12 @@ export class LoginComponent implements OnInit {
       },
       error => {
         this.submitting = false;
+
+        // There are a few different error types depending on the source
         let errorMessage = error && error.error && error.error.description ?
           error.error.error_description : 'An error occurred, please try again later';
+
+        // Default error message from Passport server is cryptic
         if (error.error.error === 'invalid_grant')
           errorMessage = 'Invalid Credentials';
         if (error.message)

@@ -1,5 +1,6 @@
 <?php
-
+// Custom auth middleware
+// Uses standard Authenticate middleware, but if auth fails allows request to continue without a user
 namespace App\Http\Middleware;
 
 use Closure;

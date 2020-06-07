@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// User registration, no need for auth
 Route::post('/register', 'UserController@register');
 
+// Requests that require authentication
 Route::middleware('auth:api')->group(function() {
     Route::get('/user', function (Request $request) {
         return $request->user();
@@ -24,6 +26,5 @@ Route::middleware('auth:api')->group(function() {
     Route::get('/search/history', 'SearchController@history');
 });
 
-Route::get('/test', function (Request $request){return (string) \Illuminate\Support\Str::uuid();});
-
+// Search request, doesn't require auth, but uses it for logging if available
 Route::middleware('optionalauth:api')->get('/search', 'SearchController@search');

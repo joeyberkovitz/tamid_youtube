@@ -25,6 +25,7 @@ export class UserService {
   public loginCompleteEmitter$: EventEmitter<any>;
 
   constructor(private http: HttpClient) {
+    // Emitter which sends out an event whenever a user logs in
     this.loginCompleteEmitter$ = new EventEmitter<any>();
   }
 
@@ -65,6 +66,7 @@ export class UserService {
   }
 
   isAuthed(): boolean{
+    // Authed if there is an auth token in local storage
     return !!localStorage.getItem('access_token');
   }
 

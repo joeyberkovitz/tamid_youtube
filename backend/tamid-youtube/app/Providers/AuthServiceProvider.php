@@ -31,6 +31,8 @@ class AuthServiceProvider extends ServiceProvider
 
         Passport::routes();
 
+        // Added for DynamoDB - override default Model classes
+        // Remove if using other supported DBs
         Passport::useTokenModel(Token::class);
         Passport::useRefreshTokenModel(RefreshToken::class);
         Passport::useClientModel(Client::class);

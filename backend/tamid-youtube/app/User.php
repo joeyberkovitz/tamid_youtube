@@ -10,6 +10,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 
+// User model, extends DynamoDbModel to support DynamoDB
+// To use MySQL or other DB, switch to extend Model
 class User extends DynamoDbModel
 {
     use \Illuminate\Auth\Authenticatable, Authorizable, CanResetPassword, \Illuminate\Auth\MustVerifyEmail;
