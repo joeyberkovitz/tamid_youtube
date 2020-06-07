@@ -3,6 +3,8 @@ This project is a YouTube viewer built using Angular for the frontend and Larave
 hosted on AWS using their serverless functionality. It uses Lambda to host the PHP code, DynamoDB as a database, 
 API Gateway to communicate between the frontend and backend and S3 to host the frontend files.
 
+This application is currently available as a subdomain of the Cooper Union TAMID Website at http://tamidtube.tamidatcooper.com/
+
 Features
 - Search for YouTube videos
 - First result is automatically played
